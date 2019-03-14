@@ -46,7 +46,8 @@ app.get('/payment', (req, res) => {
 });
 app.post('/payment', (req, res) => {
     accounts.credit.balance -= req.body.amount;
-    accounts.credit.available+= parseInt(req.body.amount,10); writeJSON();
+    accounts.credit.available+= parseInt(req.body.amount,10); 
+    writeJSON();
     res.render('payment',{message:'Payment Successful',account:accounts.credit});
 });
 
